@@ -101,3 +101,21 @@ class Nail:
         """Retourne une forme lisible de l'objet."""
         wall_state = "dans le mur" if self.in_wall else "hors du mur"
         return f"Clou {wall_state}."
+    
+toolbox = ToolBox()
+hammer = Hammer()
+screwdriver = Screwdriver()
+screw = Screw()
+nail = Nail()
+
+
+toolbox.add_tool(hammer)
+toolbox.add_tool(screwdriver)
+
+print(screw)
+screwdriver.tighten(screw)
+print(screw)
+
+print(nail)
+hammer.hammer_in(nail)
+print(nail)
