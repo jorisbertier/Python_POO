@@ -144,5 +144,15 @@ class Thread:
         """Ajoute un post."""
         self.posts.append(post)
 
-gif = Gif('Gif', 10)
-print(gif.display())
+    user = User("John", "superpassword")
+    moderator = Moderator("Lucie", "helloworld")
+
+    cake_thread = user.make_thread("Gâteau à la vanille 🍰 ???", "Vous aimez ou non ?")
+    cake_thread.display()
+
+    moderator.post(cake_thread, content="Oui j'aime beaucoup ! 😚")
+    cake_thread.display()
+
+    irrelevant_post = user.post(cake_thread, content="Et vous aimez les voitures ?")
+    response = moderator.post(cake_thread, content="C'est hors sujet sur ce forum 😕")
+    cake_thread.display()
