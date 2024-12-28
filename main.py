@@ -14,8 +14,6 @@ class ToolBox:
         index = self.tools.index(tool)
         del self.tools[index]
 
- 
-
 class Screwdriver:
     """Tournevis."""
 
@@ -61,8 +59,6 @@ class Hammer:
 
 
 class Screw:
-    """Vis."""
-     
     MAX_TIGHTNESS = 5
     
     def __init__(self):
@@ -72,12 +68,12 @@ class Screw:
     def loosen(self):
         """Déserre le vis."""
         if self.tightness > 0:
-        self.tightness -= 1
+            self.tightness -= 1
     
     def tighten(self):
         """Serre le vis."""
         if self.tightness < self.MAX_TIGHTNESS:
-        self.tightness += 1
+            self.tightness += 1
     
     def __str__(self):
         """Retourne une forme lisible de l'objet."""
@@ -94,12 +90,12 @@ class Nail:
     def nail_in(self):
         """Enfonce le clou dans un mur."""
         if not self.in_wall:
-        self.in_wall = True
+            self.in_wall = True
     
     def remove(self):
         """Enlève le clou du mur."""
         if self.in_wall:
-        self.in_wall = False
+            self.in_wall = False
     
     def __str__(self):
         """Retourne une forme lisible de l'objet."""
