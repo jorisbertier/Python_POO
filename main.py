@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 class File(ABC):
     """Fichier."""
@@ -8,7 +8,6 @@ class File(ABC):
         self.name = name
         self.size = size
 
-    @abstractmethod
     def display(self):
         """Affiche le fichier."""
         print(f"Fichier '{self.name}'.")
@@ -22,6 +21,23 @@ class ImageFile(File):
     def display(self):
         return super().display()
     pass
+
+class Gif(ImageFile):
+    def __init__(self, name, size):
+        self.name =name
+        self.size = size
+
+    def display(self):
+        return super().display()
+
+
+class Jpg(ImageFile):
+    def __init__(self, name, size):
+        self.name =name
+        self.size = size
+
+    def display(self):
+        return super().display()
 
 
 class User:
@@ -127,3 +143,6 @@ class Thread:
     def add_post(self, post):
         """Ajoute un post."""
         self.posts.append(post)
+
+gif = Gif('Gif', 10)
+print(gif.display())
