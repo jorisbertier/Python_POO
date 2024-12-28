@@ -1,4 +1,6 @@
-class File:
+from abc import ABC, abstractmethod
+
+class File(ABC):
     """Fichier."""
 
     def __init__(self, name, size):
@@ -6,6 +8,7 @@ class File:
         self.name = name
         self.size = size
 
+    @abstractmethod
     def display(self):
         """Affiche le fichier."""
         print(f"Fichier '{self.name}'.")
@@ -16,7 +19,8 @@ class ImageFile(File):
 
     Pas plus à ajouter pour l'instant !
     """
-
+    def display(self):
+        return super().display()
     pass
 
 
