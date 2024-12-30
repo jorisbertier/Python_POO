@@ -17,5 +17,3 @@ class ShortName(Exception):
         msg = f'Name is too short minimum 6 : {name}'
         super().__init__(msg, *args, **kwargs)
 
-user = User('tesf', 'courrier')
-print(user.name)
